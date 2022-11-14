@@ -1,7 +1,17 @@
 @use './partials/variables' as*;
-// @import '@fontsource/montserrat/index.css';
-// @import '@fontsource/montserrat/700.css';
+@import '@fontsource/montserrat/index.css';
+@import '@fontsource/montserrat/700.css';
 $fa-font-path: '../webfonts';
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
 @import 'bootstrap/scss/bootstrap';
+
+body {
+    background-color: $bg-color;
+
+    nav {
+        background-color: $bg-color;
+
+
+    }
+}
