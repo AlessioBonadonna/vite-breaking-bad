@@ -1,5 +1,6 @@
 <template>
     <div class="card-list-container">
+        <div v-html="`found ${characterList.length} characters`" class="bg-dark text-white text-center"></div>
         <CardComponent :character="characterList" />
     </div>
 </template>
