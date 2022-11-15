@@ -2,8 +2,8 @@
     <SeachBarComponent @filterchar="getCharacters" />
     <div class="card-list-container">
 
-        <div v-html="`found ${characterList.length} characters`" class="bg-dark text-white text-center"></div>
-        <CardComponent :character="characterList" :loading="loading" />
+        <div v-html="`found ${store.characterList.length} characters`" class="bg-dark text-white text-center"></div>
+        <CardComponent :character="store.characterList" :loading="store.loading" />
     </div>
 </template>
 
@@ -11,6 +11,7 @@
 import axios from 'axios'
 import CardComponent from './CardComponent.vue';
 import SeachBarComponent from './SeachBarComponent.vue';
+import { store } from '../store';
 
 
 
@@ -21,9 +22,7 @@ export default {
         SeachBarComponent
     }, data() {
         return {
-            apiURL: 'https://www.breakingbadapi.com/api/characters',
-            characterList: [],
-            loading: false
+            store
         }
     },
     methods: {
@@ -42,12 +41,12 @@ export default {
             }
 
 
-            axios.get(this.apiURL, options).then(
+            axios.get(store.apiURL, options).then(
                 (res) => {
 
-                    this.characterList = [...res.data]
-                    console.log(this.characterList)
-                    this.loading = false;
+                    store.characterList = [...res.data]
+                    console.log(store.characterList)
+                    store.loading = false;
                 },
 
             )
