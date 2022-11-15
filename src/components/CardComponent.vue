@@ -1,6 +1,7 @@
 <template>
     <div class="container">
-        <div class="row carta  ">
+        <div v-if="loading">Caricamento</div>
+        <div class="row carta" v-else!="loading">
             <div class="col-2 p-3  m-3 fix-card  text-center" v-for="(item, index) in character " :key="item.char_id">
                 <img :src="item.img" :alt="item.name">
                 <h3 class="mt-2 text-white">{{ item.name }}</h3>

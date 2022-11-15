@@ -5,7 +5,7 @@
   </nav>
   <main>
     <div class="container mt-5">
-      <SeachBarComponent />
+      <!-- <SeachBarComponent /> -->
       <CardListComponent />
 
 
