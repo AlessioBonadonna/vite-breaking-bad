@@ -1,8 +1,7 @@
 <template>
     <SeachBarComponent @filterchar="getCharacters" />
     <div class="card-list-container">
-
-        <div v-html="`found ${store.characterList.length} characters`" class="bg-dark text-white text-center"></div>
+        <CounterChar />
         <CardComponent :character="store.characterList" :loading="store.loading" />
     </div>
 </template>
@@ -11,7 +10,9 @@
 import axios from 'axios'
 import CardComponent from './CardComponent.vue';
 import SeachBarComponent from './SeachBarComponent.vue';
+import CounterChar from './CounterChar.vue';
 import { store } from '../store';
+
 
 
 
@@ -19,7 +20,8 @@ export default {
 
     components: {
         CardComponent,
-        SeachBarComponent
+        SeachBarComponent,
+        CounterChar
     }, data() {
         return {
             store
