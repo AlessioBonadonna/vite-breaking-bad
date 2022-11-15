@@ -1,6 +1,7 @@
 <template>
+    <SeachBarComponent @filterchar="getCharacters" />
     <div class="card-list-container">
-        <SeachBarComponent @filterchar="getCharacters" />
+
         <div v-html="`found ${characterList.length} characters`" class="bg-dark text-white text-center"></div>
         <CardComponent :character="characterList" :loading="loading" />
     </div>
@@ -28,7 +29,7 @@ export default {
     methods: {
 
         getCharacters(category) {
-            // this.loading = true;
+            //this.loading = true;
             let options = null
             if (category) {
                 options = {

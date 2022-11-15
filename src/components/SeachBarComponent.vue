@@ -1,19 +1,13 @@
 <template>
     <div class="cont-select mb-4">
         <form class="row row-cols-lg-auto g-3 align-items-center" @submit.prevent='seachcharater'>
-            <div class="col-12">
 
-                <div class="input-group">
-
-                    <input type="text" class="form-control" id="inlineFormInputGroupUsername"
-                        placeholder="trova personaggio">
-                </div>
-            </div>
 
             <div class="col-12">
                 <select class="form-select" id="inlineFormSelectPref" v-model="seach">
                     <option selected value="">Choose...</option>
-                    <option :value="status" v-for="(status, index) in StatusOptions" :key="index">{{ status }}</option>
+                    <option :value="category" v-for="(category, index) in StatusOptions" :key="index">{{ category }}
+                    </option>
 
 
                 </select>
@@ -24,7 +18,7 @@
             </div>
 
             <div class="col-12">
-                <button type="reset" class="btn btn-primary" @click="resetseach">reset</button>
+                <button type="reset" class="btn btn-danger" @click="resetseach">reset</button>
             </div>
         </form>
     </div>
@@ -32,11 +26,13 @@
 
 <script>
 export default {
+    name: 'SeachBarComponent',
     data() {
         return {
             StatusOptions: [
                 'Breaking Bad',
-                'Better Call Saul'],
+                'Better Call Saul'
+            ],
             seach: '',
 
         }
